@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex深入浅出</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .app {
+            text-align: center;
+        }
+
+        .box1,.box3 {
+            background-color: rgb(202, 202, 202);
+            height: 2rem;
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .box1Child {
+            width: 10rem;
+            background-color: aqua;
+            margin: 0 0.5rem;
+        }
+
+        .box2 {
+            background-color: rgb(202, 202, 202);
+            height: 2rem;
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .box2Child {
+            /* width: 10rem; */
+            background-color: aqua;
+            margin: 0 0.5rem;
+        }
+        /*flex-shrink在flex-grow中不生效,因为不是固定宽度,宽度永远不会容器*/
+        .box2Child1 {
+            flex-grow: 0.5;
+            flex-shrink: 0.5;
+        }
+        .box2Child2 {
+            flex-grow: 0.5;
+            flex-shrink: 0.5;
+        }
+        .box2Child3 {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        .box3Child1 {
+            width: 60vw;
+            margin: 0;
+            background-color: red;
+            /*不收缩*/
+            flex-shrink: 0;
+        }
+        .box3Child2 {
+            width: 60vw;
+            margin: 0;
+            flex-shrink: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <div class="box1">
+            <div class="box1Child">1</div>
+            <div class="box1Child">2</div>
+            <div class="box1Child">3</div>
+        </div>
+        <div class="box2">
+            <div class="box2Child box2Child1">1</div>
+            <div class="box2Child box2Child2">2</div>
+            <div class="box2Child box2Child3">3</div>
+        </div>
+        <div class="box3">
+            <div class="box2Child box3Child1">1</div>
+            <div class="box2Child box3Child2">2</div>
+        </div>
+    </div>
+</body>
+
+</html>
